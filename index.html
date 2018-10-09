@@ -1,0 +1,34 @@
+<html>
+    <head></head>
+    <script src="./calculator.moduleExport.js"></script>
+    <script src="./calculator.iife.js"></script>
+    <body></body>
+    <script>
+        //IIFE pattern Module export
+        console.log("Export module");
+        let c = new calculatorModule({name:"Pitagorin",op:"substract"});
+        console.log(c);
+        console.log(c.add(1,2));
+        console.log(c.substract(1,2));
+        console.log(c.multiply(1,2));
+        c.calculoAsincrono(c.pot,123,22).then((response)=>{
+            console.log(`Resultado del cálculo asíncrono: ${response}`);
+        });
+        console.log(c.divide(1,2));
+        console.log(c.module(20,3));
+        console.log(c.randomizeProp());
+       
+        //IIFE
+        console.log("IIFE");
+        console.log(calculatorIIFE.add(1,2));
+        console.log(calculatorIIFE.substract(1,2));
+        console.log(calculatorIIFE.multiply(1,2));
+        calculatorIIFE.calculoAsincrono(c.pot,123,22).then((response)=>{
+            console.log(`Resultado del cálculo asíncrono: ${response}`);
+        });
+        console.log(calculatorIIFE.divide(1,2));
+        console.log(calculatorIIFE.module(20,3));
+        console.log(calculatorIIFE.randomizeProp());
+
+    </script>
+</html>
