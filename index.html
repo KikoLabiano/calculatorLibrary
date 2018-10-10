@@ -1,8 +1,10 @@
 <html>
     <head></head>
-    <script src="./calculator.moduleExport.js"></script>
-    <script src="./calculator.iife.js"></script>
+    
     <body>
+            <script src="./calculator.moduleExport.js"></script>
+            <script src="./calculator.iife.js"></script>
+            <link href="./css/calculator.css" rel="stylesheet">
 <div id="contadores"></div>
 <label>Valor inicial:</label>
 <input type="text" id="countInit" value="0"/>
@@ -13,6 +15,11 @@
 <label>Intervalo de tiempo:</label>
 <input type="text" id="countWait" value="0"/>
 <br/>
+
+<div class="counter-back"/>
+<div class="counter-mask">10</div>
+</div>
+
 <input type="button" value="Iniciar contador" onclick="calculatorIIFE.counter(document.getElementById('countInit').value,document.getElementById('countEnd').value,document.getElementById('countWait').value,document.getElementById('contadores'))"/>
     </body>
     <script>

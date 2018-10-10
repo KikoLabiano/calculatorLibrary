@@ -1,0 +1,32 @@
+.counter-back{
+    text-align: center;
+    display: flex;
+    height: 55px;
+    width: 55px;
+    background-color: #4566FC;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.counter-mask{
+    text-align: center;
+    display: flex;
+    height: 50px;
+    width: 50px;
+    color: #4566FC;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

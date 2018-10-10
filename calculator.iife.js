@@ -35,6 +35,7 @@ var calculatorIIFE = (function(options){
             if(typeof(Worker) !== "undefined") {
                 if(typeof(w) == "undefined") {
                     childNodeCounter = document.createElement("div"); 
+                    childNodeCounter.classList.add("counter");
                     elt.appendChild(childNodeCounter); 
                     w = new Worker("./web_workers/ww_counter.js");
                     w.postMessage([init,wait]);
