@@ -1,6 +1,6 @@
 <html>
     <head></head>
-    
+
     <body>
             <script src="./calculator.moduleExport.js"></script>
             <script src="./calculator.iife.js"></script>
@@ -17,8 +17,9 @@
 <br/>
 
 <div class="counter-back"/>
-<div class="counter-mask">10</div>
+  <div class="counter-mask">10</div>
 </div>
+
 
 <input type="button" value="Iniciar contador" onclick="calculatorIIFE.counter(document.getElementById('countInit').value,document.getElementById('countEnd').value,document.getElementById('countWait').value,document.getElementById('contadores'))"/>
     </body>
@@ -36,7 +37,7 @@
         console.log(c.divide(1,2));
         console.log(c.module(20,3));
         console.log(c.randomizeProp());
-       
+
         //IIFE
         console.log("IIFE");
         console.log(this.calculatorIIFE.add(1,2));
