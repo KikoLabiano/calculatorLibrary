@@ -37,7 +37,22 @@ var calculatorModule = (function(options){
 
     this.counter = function(init,end,wait,elt)
     {
-        
+        let w;
+        if(typeof(Worker) !== "undefined") {
+            if(typeof(w) == "undefined") {
+                w = new Worker("demo_workers.js");
+                w.postMessage(init);
+            }
+            w.onmessage = function(event) {
+                elt.innerHTML = event.data;
+            };
+        } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+        }
+        w.startWorker();
+        function start(){
+            w.startWorker();
+        }
     }
 
     //Función que realiza un cálculo asíncrono de la función pasada por parámetro

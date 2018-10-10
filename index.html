@@ -2,7 +2,19 @@
     <head></head>
     <script src="./calculator.moduleExport.js"></script>
     <script src="./calculator.iife.js"></script>
-    <body></body>
+    <body>
+<div id="contadores"></div>
+<label>Valor inicial:</label>
+<input type="text" id="countInit" value="0"/>
+<br/>
+<label>Valor Final:</label>
+<input type="text" id="countEnd" value="0"/>
+<br/>
+<label>Intervalo de tiempo:</label>
+<input type="text" id="countWait" value="0"/>
+<br/>
+<input type="button" value="Iniciar contador" onclick="calculatorIIFE.counter(document.getElementById('countInit').value,document.getElementById('countEnd').value,document.getElementById('countWait').value,document.getElementById('contadores'))"/>
+    </body>
     <script>
         //IIFE pattern Module export
         console.log("Export module");
@@ -20,7 +32,7 @@
        
         //IIFE
         console.log("IIFE");
-        console.log(calculatorIIFE.add(1,2));
+        console.log(this.calculatorIIFE.add(1,2));
         console.log(calculatorIIFE.substract(1,2));
         console.log(calculatorIIFE.multiply(1,2));
         calculatorIIFE.calculoAsincrono(c.pot,123,22).then((response)=>{
@@ -29,6 +41,7 @@
         console.log(calculatorIIFE.divide(1,2));
         console.log(calculatorIIFE.module(20,3));
         console.log(calculatorIIFE.randomizeProp());
-
+        // calculatorIIFE.counter(5,100,500,document.getElementById("contadores"));
+        // calculatorIIFE.counter(5,100,10,document.getElementById("contadores"));
     </script>
 </html>

@@ -29,8 +29,30 @@ var calculatorIIFE = (function(options){
         pot: (a,b) =>  Math.pow(a,b),
 
         counter: (init,end,wait,elt) =>
-        {
-            
+        {            
+            let w;
+            let childNodeCounter;            
+            if(typeof(Worker) !== "undefined") {
+                if(typeof(w) == "undefined") {
+                    childNodeCounter = document.createElement("div"); 
+                    elt.appendChild(childNodeCounter); 
+                    w = new Worker("./web_workers/ww_counter.js");
+                    w.postMessage([init,wait]);
+                }
+                w.onmessage = function(event) {     
+                    if(!isNaN(event.data)){       
+                        if(event.data < end){        
+                            childNodeCounter.innerHTML = event.data;  
+                        }
+                        else{
+                            w.terminate();
+                            w = undefined;
+                        }
+                    }
+                };
+            } else {
+                elt = "Lo sentimos, su navegador no soporta Web Workers...";
+            }
         },
         
         //Función que realiza un cálculo asíncrono de la función pasada por parámetro
