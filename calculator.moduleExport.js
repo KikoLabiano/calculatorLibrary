@@ -53,6 +53,5 @@ var calculatorModule = (function(options){
         this.miCalc.favOp = listOps[Math.floor(Math.random()*listOps.length)];
         return this.miCalc;
     }
-
-    this.test = "Test value";   
+ 
 });
