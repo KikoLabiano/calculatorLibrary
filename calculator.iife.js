@@ -31,11 +31,15 @@ var calculatorIIFE = (function(options){
         counter: (init,end,wait,elt) =>
         {            
             let w;
-            let childNodeCounter;            
+            let childNodeCounter; 
+            let childNodeCounterInner;           
             if(typeof(Worker) !== "undefined") {
                 if(typeof(w) == "undefined") {
                     childNodeCounter = document.createElement("div"); 
-                    childNodeCounter.classList.add("counter");
+                    childNodeCounter.classList.add("counter-back");
+                    childNodeCounterInner= document.createElement("div"); 
+                    childNodeCounterInner.classList.add("counter-mask");
+                    childNodeCounter.append(childNodeCounterInner);
                     elt.appendChild(childNodeCounter); 
                     w = new Worker("./web_workers/ww_counter.js");
                     w.postMessage([init,wait]);
@@ -43,7 +47,12 @@ var calculatorIIFE = (function(options){
                 w.onmessage = function(event) {     
                     if(!isNaN(event.data)){       
                         if(event.data < end){        
-                            childNodeCounter.innerHTML = event.data;  
+                            childNodeCounterInner.innerHTML = event.data;  
+                            //TODO: Ajustar ancho y alto del container según el tamaño del contador
+                            // if(event.data.toString().length>4)
+                            // {
+                            //     elt.style.transform("scale(1.5))");
+                            // }                            
                         }
                         else{
                             w.terminate();
