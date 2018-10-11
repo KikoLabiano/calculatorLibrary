@@ -1,6 +1,6 @@
 <html>
     <head></head>
-    
+
     <body>
             <script src="./calculator.moduleExport.js"></script>
             <script src="./calculator.iife.js"></script>
@@ -15,6 +15,9 @@
 <label>Intervalo de tiempo:</label>
 <input type="text" id="countWait" value="0"/>
 <br/>
+
+
+
 
 <input type="button" value="Iniciar contador" onclick="calculatorIIFE.counter(document.getElementById('countInit').value,document.getElementById('countEnd').value,document.getElementById('countWait').value,document.getElementById('contadores'))"/>
     </body>
@@ -32,7 +35,7 @@
         console.log(c.divide(1,2));
         console.log(c.module(20,3));
         console.log(c.randomizeProp());
-       
+
         //IIFE
         console.log("IIFE");
         console.log(this.calculatorIIFE.add(1,2));
