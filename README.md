@@ -1,3 +1,3 @@
-## calculatorLibrary
+### calculatorLibrary
 
-### Librería de prueba para generación de calculadora con entorno gráfico
+#### Librería de prueba para generación de calculadora con entorno gráfico
