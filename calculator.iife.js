@@ -1,20 +1,29 @@
 var calculatorIIFE = (function(options){
     "use strict";
-    
-    let listNames = ["Pitagorin", "Cientifica", "Casio"];
-    let listOps= ["add", "substract", "multiply", "divide"];    
+     
     let miCalc = {};
 
-    //Objeto miCalc sin ninguna utilidad
+    //Objeto miCalc sin ninguna utilidad por ahora.
     if(options!==undefined)
     {
         miCalc = {
+            listNames: options.lstN,
+            listOps: options.lstO,
             name: options.name,
             favOp: options.op
         };  
     }
+    else
+    {
+        miCalc = {
+            listNames: ["Pitagorin", "Cientifica", "Casio"],
+            listOps: ["add", "substract", "multiply", "divide"],
+            name: "Default calc",
+            favOp: "add"
+        };  
+    }
 
-    return{
+    var publicAPI ={
         //Con anotación flecha (con una sóla sentencia el return está implícito)
         add : (a,b) =>  a + b,
 
@@ -74,10 +83,10 @@ var calculatorIIFE = (function(options){
 
         //Crear un objeto miCalc aleatorio - Sólo por probar, sin ninguna utilidad práctica...
         randomizeProp: () => {
-            miCalc.name = listNames[Math.floor(Math.random()*listNames.length)];
-            miCalc.favOp = listOps[Math.floor(Math.random()*listOps.length)];
+            miCalc.name = miCalc.listNames[Math.floor(Math.random()*miCalc.listNames.length)];
+            miCalc.favOp = miCalc.listOps[Math.floor(Math.random()*miCalc.listOps.length)];
             return miCalc;
+        }        
     }
-}
-
+    return publicAPI;
 })();

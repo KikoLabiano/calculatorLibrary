@@ -24,7 +24,7 @@
     <script>
         //IIFE pattern Module export
         console.log("Export module");
-        let c = new calculatorModule({name:"Pitagorin",op:"substract"});
+        let c = new calculatorModule({name:"Pitagorin",op:"substract",listN:["Pitagorin", "Cientifica", "Casio"],listO:["add", "substract", "multiply", "divide"]});
         console.log(c);
         console.log(c.add(1,2));
         console.log(c.substract(1,2));
@@ -38,7 +38,7 @@
 
         //IIFE
         console.log("IIFE");
-        console.log(this.calculatorIIFE.add(1,2));
+        console.log(calculatorIIFE.add(1,2));
         console.log(calculatorIIFE.substract(1,2));
         console.log(calculatorIIFE.multiply(1,2));
         calculatorIIFE.calculoAsincrono(c.pot,123,22).then((response)=>{
