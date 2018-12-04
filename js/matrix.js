@@ -2,7 +2,7 @@ var Matrix = function(data){
     //Todo: comprobación longitudes de datos
     this.rows = data!=undefined ? data.length : 0;
     this.cols = data[0] != undefined ? data[0].length: 0;
-   
+    this.values = data;
 }
 
 Matrix.prototype.size = function(){
@@ -26,6 +26,13 @@ Matrix.prototype.identity = function(n){
     return a;
 } 
 
-Matrix.prototype.invert = function(m){
+Matrix.prototype.transpose = function(){
+    let aux = this;
+    return Object.keys(aux.values).map(function(c) {
+        return aux.values.map(function(r) { return r[c]; });
+    });
+}
+
+Matrix.prototype.inverse = function(){
     
 }
