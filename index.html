@@ -2,8 +2,11 @@
     <head></head>
 
     <body>
-            <script src="./calculator.moduleExport.js"></script>
-            <script src="./calculator.iife.js"></script>
+            <!-- <script src="./js/calculator.moduleExport.js"></script> -->
+            <script src="./js/calculator.iife.js"></script>
+            <script src="./js/matrix.js"></script>
+            <script type="module" src="./js/matrixCalculator.mjs"></script>
+            <script type="module" src="./js/index.js"></script>
             <link href="./css/calculator.css" rel="stylesheet">
 <div id="contadores"></div>
 <label>Valor inicial:</label>
@@ -23,7 +26,7 @@
     </body>
     <script>
         //IIFE pattern Module export
-        console.log("Export module");
+       /* console.log("Export module");
         let c = new calculatorModule({name:"Pitagorin",op:"substract",listN:["Pitagorin", "Cientifica", "Casio"],listO:["add", "substract", "multiply", "divide"]});
         console.log(c);
         console.log(c.add(1,2));
@@ -34,18 +37,23 @@
         });
         console.log(c.divide(1,2));
         console.log(c.module(20,3));
-        console.log(c.randomizeProp());
+        console.log(c.randomizeProp());*/
+        
 
         //IIFE
         console.log("IIFE");
         console.log(calculatorIIFE.add(1,2));
         console.log(calculatorIIFE.substract(1,2));
         console.log(calculatorIIFE.multiply(1,2));
-        calculatorIIFE.calculoAsincrono(c.pot,123,22).then((response)=>{
+        calculatorIIFE.calculoAsincrono(calculatorIIFE.pot,123,22).then((response)=>{
             console.log(`Resultado del cálculo asíncrono: ${response}`);
         });
         console.log(calculatorIIFE.divide(1,2));
         console.log(calculatorIIFE.module(20,3));
         console.log(calculatorIIFE.randomizeProp());        
+
+       
+
+        
     </script>
 </html>
